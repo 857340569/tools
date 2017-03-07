@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Wed Oct 14 09:45:25 CST 2015
+onejar.license.required=false
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=F\:\\auto_entity2.jar
+manifest.mergeall=true
+manifest.mainclass=com.zp.tools.TestCreateEntity
+manifest.file=<createnew>
+jarname.isextern=true
+onejar.expand=
+excludes=<po|java_pro>~com/~zp/~test/;<jar|javax.mail.jar>;<jar|javaee-api-6.0.jar>
+includes=
