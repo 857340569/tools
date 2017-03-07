@@ -17,6 +17,7 @@ public class Login extends BaseFrame{
 	private JPasswordField passwordField;
 	public Login() {
 		setSize(1003,613);
+		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setTitle("登录");
 		setLocation(width/2-getWidth()/2, height/2-getHeight()/2);
