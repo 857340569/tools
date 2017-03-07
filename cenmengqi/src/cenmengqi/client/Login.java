@@ -44,15 +44,19 @@ public class Login extends BaseFrame{
 		mainPanel.add(passwordField);
 		
 		
-		loginBtn=createImgBtn("images/login_btn.png");
-		loginBtn.setBounds(452, 388, 40, 33);
+//		loginBtn=createImgBtn("images/login_btn.png");
+//		loginBtn.setBounds(452, 388, 40, 33);
+//		mainPanel.add(loginBtn);
+//		
+//		resetBtn=createImgBtn("images/reset_btn.png");
+//		resetBtn.setBounds(500, 388, 40, 33);
+//		mainPanel.add(resetBtn);
+		
+		loginBtn=new JButton("登录");
+//		loginBtn.setForeground(Color.white);
+		loginBtn.setBounds(455, 340, 80, 30);
 		mainPanel.add(loginBtn);
 		
-		resetBtn=createImgBtn("images/reset_btn.png");
-		resetBtn.setBounds(500, 388, 40, 33);
-		
-		
-		mainPanel.add(resetBtn);
 		add(mainPanel);
 		setVisible(true);
 		
