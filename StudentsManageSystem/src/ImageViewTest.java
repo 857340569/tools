@@ -16,7 +16,11 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
-
+/**
+ * test
+ * @author zjp
+ * @date 2017Äê3ÔÂ7ÈÕ
+ */
 public class ImageViewTest {
  public static void main(String[] args){
   JFrame frame = new ImagViewFrame();
