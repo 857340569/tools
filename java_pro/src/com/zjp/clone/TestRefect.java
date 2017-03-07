@@ -8,7 +8,7 @@ public class TestRefect {
 		try {
 			Constructor<Student> student=Student.class.getConstructor(String.class);
 			//student.setAccessible(true);
-			student.newInstance("123").show();
+			student.newInstance("岑梦琪").show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
