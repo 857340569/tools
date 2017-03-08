@@ -1,25 +1,29 @@
 package cenmengqi.client;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class Login extends BaseFrame{
-	private JPanel mainPanel;
-	private JButton loginBtn,resetBtn;
+public class Login extends BaseFrame implements ActionListener{
+	private JPanel mainPanel;//桌布
+	private JButton loginBtn,resetBtn;//按钮
 	
-	private JLabel labelName,labelPwd;
-	private JTextField nameField;
-	private JPasswordField passwordField;
+	private JLabel labelName,labelPwd;//用户名
+	private JTextField nameField;//输入框
+	private JPasswordField passwordField;//密码框
 	public Login() {
 		setSize(1003,613);
 		setResizable(false);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setTitle("登录");
+		setDefaultCloseOperation(EXIT_ON_CLOSE);//关闭
+		setTitle("企业人事管理系统");
+		setIconImage(new ImageIcon("images/logo.png").getImage());
 		setLocation(width/2-getWidth()/2, height/2-getHeight()/2);
 		mainPanel=createImgBgPanel("images/login_bg.png");
 		mainPanel.setLayout(null);
@@ -53,6 +57,9 @@ public class Login extends BaseFrame{
 //		mainPanel.add(resetBtn);
 		
 		loginBtn=new JButton("登录");
+		loginBtn.setFocusPainted(false);
+		//注册点击事件
+		loginBtn.addActionListener(this);
 //		loginBtn.setForeground(Color.white);
 		loginBtn.setBounds(455, 340, 80, 30);
 		mainPanel.add(loginBtn);
@@ -63,5 +70,12 @@ public class Login extends BaseFrame{
 	}
 	public static void main(String[] args) {
 		new Login();
+	}
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==loginBtn)
+		{
+			
+		}
 	}
 }
