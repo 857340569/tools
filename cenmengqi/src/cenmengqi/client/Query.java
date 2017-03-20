@@ -54,8 +54,8 @@ public class Query extends BaseFrame implements ActionListener{
 		setLocation(width/2-getWidth()/2, height/2-getHeight()/2);
 		setTitle("查询");
 		setIconImage(new ImageIcon("images/logo.png").getImage());
-		contentPane=createImgBgPanel("images/content_bg.png");
-//		contentPane=new JPanel();
+//		contentPane=createImgBgPanel("images/content_bg.png");
+		contentPane=new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
@@ -86,6 +86,7 @@ public class Query extends BaseFrame implements ActionListener{
 		
 		editBtn = new JButton("编辑");
 		editBtn.setBounds(495, 37, 93, 23);
+		editBtn.addActionListener(this);
 		contentPane.add(editBtn);
 	}
 

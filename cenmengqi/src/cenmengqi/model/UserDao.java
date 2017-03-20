@@ -15,6 +15,8 @@ import cenmengqi.utils.StringUtils;
 
 public class UserDao {
 	
+	public final boolean DEBUG=true;
+	
 	public static List<User> getAllUsers()
 	{
 		List<User> users=new ArrayList<>();
