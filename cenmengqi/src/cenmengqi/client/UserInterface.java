@@ -7,6 +7,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import cenmengqi.model.UserDao;
+
 public class UserInterface extends BaseFrame implements ActionListener {
 	private JPanel mainPanel;// 桌布
 	private JButton searchBtn, exitBtn;// 按钮
@@ -40,8 +42,10 @@ public class UserInterface extends BaseFrame implements ActionListener {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		new UserInterface();
+		if(UserDao.DEBUG)
+		{
+			new UserInterface();
+		}
 	}
 
 	public void actionPerformed(ActionEvent e) {

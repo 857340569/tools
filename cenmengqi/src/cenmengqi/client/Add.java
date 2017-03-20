@@ -31,7 +31,7 @@ public class Add extends BaseFrame implements ActionListener {
 	public Add(String title) {
 		setSize(1003, 613);
 		setResizable(false);
-		setDefaultCloseOperation(EXIT_ON_CLOSE);// 关闭
+		setDefaultCloseOperation(DISPOSE_ON_CLOSE);// 关闭
 		setTitle(title);
 		setIconImage(new ImageIcon("images/logo.png").getImage());
 		setLocation(width / 2 - getWidth() / 2, height / 2 - getHeight() / 2);
@@ -159,9 +159,8 @@ public class Add extends BaseFrame implements ActionListener {
 		    if("男".equals(user.getSex()))
 		    {
 		    	sexMan.setSelected(true);
-		    }else
-		    {
-		    	
+		    }else{
+		    	sexWoman.setSelected(true);
 		    }
 		    eduField.setText(user.getEducation());
 		    nativePlaceField.setText(user.getNativePlace());
@@ -170,7 +169,10 @@ public class Add extends BaseFrame implements ActionListener {
 	}
 
 	public static void main(String[] args) {
-		new Add("添加用户");
+		if(UserDao.DEBUG)
+		{
+			new Add("添加用户");
+		}
 	}
 
 	@Override
@@ -200,7 +202,7 @@ public class Add extends BaseFrame implements ActionListener {
 				boolean isSuccess=UserDao.updateUser(user);
 				if(isSuccess)
 				{
-					showMessage("员工信息修改添加！");
+					showMessage("员工信息修成功！");
 					dispose();
 				}else
 				{

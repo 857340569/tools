@@ -7,6 +7,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import cenmengqi.model.UserDao;
+
 public class AdministratorInterface extends BaseFrame implements ActionListener {
 	private JPanel mainPanel;// 桌布
 	private JButton delBtn, addBtn, exitBtn, searchBtn;// 按钮
@@ -54,7 +56,10 @@ public class AdministratorInterface extends BaseFrame implements ActionListener 
 	}
 
 	public static void main(String[] args) {
-		new AdministratorInterface();
+		if(UserDao.DEBUG)
+		{
+			new AdministratorInterface();
+		}
 	}
 
 	/**

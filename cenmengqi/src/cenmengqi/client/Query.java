@@ -29,20 +29,15 @@ public class Query extends BaseFrame implements ActionListener{
 	private JButton delBtn;
 	private JButton editBtn;
 	private List<User> users;
+	private JButton addBtn;
 	/**
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Query frame = new Query();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		if(UserDao.DEBUG)
+		{
+			new Query();
+		}
 	}
 
 	/**
@@ -54,8 +49,8 @@ public class Query extends BaseFrame implements ActionListener{
 		setLocation(width/2-getWidth()/2, height/2-getHeight()/2);
 		setTitle("查询");
 		setIconImage(new ImageIcon("images/logo.png").getImage());
-//		contentPane=createImgBgPanel("images/content_bg.png");
-		contentPane=new JPanel();
+		contentPane=createImgBgPanel("images/content_bg.png");
+//		contentPane=new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
@@ -72,7 +67,7 @@ public class Query extends BaseFrame implements ActionListener{
 		contentPane.add(queryBtn);
 
 		delBtn = new JButton("删除");
-		delBtn.setBounds(644, 37, 93, 23);
+		delBtn.setBounds(695, 37, 93, 23);
 		delBtn.addActionListener(this);
 		contentPane.add(delBtn);
 
@@ -85,9 +80,15 @@ public class Query extends BaseFrame implements ActionListener{
 		contentPane.add(scrollPane);
 		
 		editBtn = new JButton("编辑");
-		editBtn.setBounds(495, 37, 93, 23);
+		editBtn.setBounds(464, 36, 93, 23);
 		editBtn.addActionListener(this);
 		contentPane.add(editBtn);
+		
+		addBtn = new JButton("添加");
+		addBtn.setBounds(581, 37, 93, 23);
+		addBtn.addActionListener(this);
+		contentPane.add(addBtn);
+		setVisible(true);
 	}
 
 	@Override
@@ -140,8 +141,12 @@ public class Query extends BaseFrame implements ActionListener{
 			{
 				int position=selectedRows[0];
 				User user=users.get(position);
-				new Add(user,"修改用户信息");
+				new Add(user,"修改员工信息");
 			}
+		}
+		else if(e.getSource()==addBtn)
+		{
+			new Add("添加员工");
 		}
 	}
 }

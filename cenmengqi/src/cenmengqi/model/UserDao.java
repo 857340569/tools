@@ -15,7 +15,7 @@ import cenmengqi.utils.StringUtils;
 
 public class UserDao {
 	
-	public final boolean DEBUG=true;
+	public final static boolean DEBUG=true;
 	
 	public static List<User> getAllUsers()
 	{
@@ -73,7 +73,7 @@ public class UserDao {
 			return null;
 		}
 		try {
-			String sql="select * from user where name number=?";
+			String sql="select * from user where number=?";
 			SqlHelper helper=new SqlHelper();
 			ResultSet set=helper.findExecute(sql,new String[]{number});//自动添加单引号 （包装后的参数） 
 			if(set.next())

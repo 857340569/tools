@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import cenmengqi.model.UserDao;
+
 import java.awt.CardLayout;
 import javax.swing.JPasswordField;
 import javax.swing.JEditorPane;
@@ -28,16 +31,10 @@ public class AdminFrame extends JFrame {
 	 * Launch the application.
 	 */
 	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					AdminFrame frame = new AdminFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
+		if(UserDao.DEBUG)
+		{
+			new AdminFrame();
+		}
 	}
 
 	/**
@@ -80,6 +77,7 @@ public class AdminFrame extends JFrame {
 		
 		JCheckBox checkBox = new JCheckBox("火");
 		contentPane.add(checkBox, "name_8166283392832");
+		setVisible(true);
 	}
 
 }

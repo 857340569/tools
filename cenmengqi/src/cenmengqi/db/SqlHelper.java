@@ -27,7 +27,7 @@ public class SqlHelper
 		    //MySQL配置时的密码
 			String password = "123654";
 			Class.forName("com.mysql.jdbc.Driver");
-			cc=DriverManager.getConnection("jdbc:mysql://localhost:3306/hr",user,password);
+			cc=DriverManager.getConnection("jdbc:mysql://localhost:3306/hr?useUnicode=true&characterEncoding=UTF-8",user,password);
 		} catch (Exception e)
 		{
 			// TODO Auto-generated catch block
