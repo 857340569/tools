@@ -1,10 +1,12 @@
 package cenmengqi.client;
 
+import java.awt.Image;
 import java.awt.Toolkit;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import cenmengqi.utils.DrawBg;
 
@@ -25,8 +27,13 @@ public class BaseFrame extends JFrame{
 	 */
 	protected DrawBg createImgBgPanel(String imgPath)
 	{
-		DrawBg drawBg=new DrawBg(new ImageIcon(imgPath).getImage());
+//		DrawBg drawBg=new DrawBg(new ImageIcon(imgPath).getImage());
+//		return drawBg;
+		ImageIcon imageIcon=new ImageIcon(imgPath);
+		Image image=imageIcon.getImage();
+		DrawBg drawBg=new DrawBg(image);
 		return drawBg;
+		
 	}
 	
 	/**
@@ -35,6 +42,13 @@ public class BaseFrame extends JFrame{
 	protected JButton createImgBtn(String imgPath) {
 		return new JButton(new ImageIcon(imgPath));
 		
+	}
+	/**
+	 * 显示消息面板
+	 * @param msg
+	 */
+	protected void showMessage(String msg) {
+		JOptionPane.showMessageDialog(this, msg);
 	}
 	
 }

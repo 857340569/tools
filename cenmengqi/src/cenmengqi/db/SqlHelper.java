@@ -1,6 +1,8 @@
 package cenmengqi.db;
 
 
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -25,7 +27,7 @@ public class SqlHelper
 		    //MySQL配置时的密码
 			String password = "123654";
 			Class.forName("com.mysql.jdbc.Driver");
-			cc=DriverManager.getConnection("jdbc:mysql://localhost:3306/studentsMs",user,password);
+			cc=DriverManager.getConnection("jdbc:mysql://localhost:3306/hr",user,password);
 		} catch (Exception e)
 		{
 			// TODO Auto-generated catch block
@@ -56,7 +58,7 @@ public class SqlHelper
 	}
 	public ResultSet findExecute(String sql,String [] param)
 	{
-		if (param.length==0)
+		if (param==null||param.length==0)
 		{
 			try
 			{
@@ -127,5 +129,45 @@ public class SqlHelper
 			}
 		}
 		return result;
+	}
+	
+	public static <T> T getBeanFromDb(T t,ResultSet set)
+	{
+		if(t!=null&&set!=null)
+		{
+			Class<?> tClass=t.getClass();
+			Field[] fields = tClass.getDeclaredFields();
+			for(Field field:fields)
+			{
+				field.setAccessible(true);
+				String fieldName=field.getName();
+				
+				try{
+					Class<?> fClass=field.getType();
+					Object value=set.getObject(fieldName);
+					Method method=tClass.getMethod("set"+fieldName.substring(0, 1).toUpperCase()+fieldName.substring(1), fClass);
+					method.setAccessible(true);
+					method.invoke(t, value);
+//					System.out.println(fieldName+" "+value+ " "+fClass);
+				}catch (Exception e) {
+					e.printStackTrace();
+				}
+				
+				
+			}
+		}
+		return t;
+	}
+	public static <T> String getFieldVal(T t,String fieldName)
+	{
+		Class<?> tClass=t.getClass();
+		try {
+			Field field = tClass.getDeclaredField(fieldName);
+			field.setAccessible(true);
+			return String.valueOf(field.get(t));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "";
 	}
 }

@@ -26,6 +26,7 @@ public class Login extends BaseFrame implements ActionListener{
 		setIconImage(new ImageIcon("images/logo.png").getImage());
 		setLocation(width/2-getWidth()/2, height/2-getHeight()/2);
 		mainPanel=createImgBgPanel("images/login_bg.png");
+//		mainPanel=createImgBgPanel("images/ccc.jpg");
 		mainPanel.setLayout(null);
 		
 		labelName=new JLabel("用户名");
