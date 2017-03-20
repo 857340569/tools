@@ -115,5 +115,19 @@ public class UserDao {
 		}
 		return false;
 	}
-	
+	public static boolean updateUser(User user)
+	{
+		if(user==null)return false;
+		try {
+			String sql="update user set pwd=?,name=?,sex=?,department=?,education=?,nativePlace=? where id=?";
+			SqlHelper helper=new SqlHelper();
+			String[] values=new String[]{user.getPwd(),user.getName(),user.getSex(),user.getDepartment(),user.getEducation(),user.getNativePlace(),user.getId()+""};
+			//result　表示执行成功的条数，大于零说明执行成功
+			int result=helper.updateExecute(sql,values);
+			return result>0;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return false;
+	}
 }

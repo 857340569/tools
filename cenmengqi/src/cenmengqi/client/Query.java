@@ -1,30 +1,24 @@
 package cenmengqi.client;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.table.DefaultTableModel;
 
 import cenmengqi.bean.User;
 import cenmengqi.model.UserDao;
 import cenmengqi.model.UserTableModel;
-
-import javax.swing.JCheckBox;
-import javax.swing.JDialog;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.ListSelectionModel;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JTable;
 
 public class Query extends BaseFrame implements ActionListener{
 
@@ -145,6 +139,7 @@ public class Query extends BaseFrame implements ActionListener{
 			{
 				int position=selectedRows[0];
 				User user=users.get(position);
+				new Add(user,"修改用户信息");
 			}
 		}
 	}

@@ -11,6 +11,11 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
+import cenmengqi.bean.User;
+import cenmengqi.bean.User.UserType;
+import cenmengqi.model.UserDao;
+import cenmengqi.utils.StringUtils;
+
 public class Login extends BaseFrame implements ActionListener{
 	private JPanel mainPanel;//桌布
 	private JButton loginBtn,resetBtn;//按钮
@@ -76,7 +81,32 @@ public class Login extends BaseFrame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==loginBtn)
 		{
-			
+			String number=nameField.getText();
+			String pwd=passwordField.getText();
+			if(StringUtils.isEmpty(number,pwd))
+			{
+				showMessage("用户名或密码不能为空！");
+				return;
+			}
+			User user=UserDao.queryUserByNumber(number);
+			if(user==null)
+			{
+				showMessage("该账号不存在！");
+				return;
+			}
+			if(!pwd.equals(user.getPwd()))
+			{
+				showMessage("密码错误，请重试！");
+				return;
+			}
+			if(user.getUserType().equals(UserType.ADMIN.name()))
+			{
+				new Query();
+			}else
+			{
+				new Add(user,"个人信息");
+			}
+			dispose();
 		}
 	}
 }

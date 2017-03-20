@@ -28,11 +28,11 @@ public class Add extends BaseFrame implements ActionListener {
 	private JRadioButton sexMan;
 	private JRadioButton sexWoman;
 
-	public Add() {
+	public Add(String title) {
 		setSize(1003, 613);
 		setResizable(false);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);// 关闭
-		setTitle("添加用户");
+		setTitle(title);
 		setIconImage(new ImageIcon("images/logo.png").getImage());
 		setLocation(width / 2 - getWidth() / 2, height / 2 - getHeight() / 2);
 		mainPanel = createImgBgPanel("images/content_bg.png");
@@ -145,14 +145,32 @@ public class Add extends BaseFrame implements ActionListener {
 		setVisible(true);
 
 	}
-	public Add(User us){
-		this();
+	private User user;
+	public Add(User user,String title){
+		this(title);
+		this.user=user;
+		if(user!=null)
+		{
+			nameField.setText(user.getName());
+			numberField.setText(user.getNumber());
+			numberField.setEditable(false);
+		    pwdField.setText(user.getPwd());
+		    departmentField.setText(user.getDepartment());
+		    if("男".equals(user.getSex()))
+		    {
+		    	sexMan.setSelected(true);
+		    }else
+		    {
+		    	
+		    }
+		    eduField.setText(user.getEducation());
+		    nativePlaceField.setText(user.getNativePlace());
+		}
+		
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		new Add();
-
+		new Add("添加用户");
 	}
 
 	@Override
@@ -169,6 +187,25 @@ public class Add extends BaseFrame implements ActionListener {
 			if(StringUtils.isEmpty(userName,number,pwd,department,sex,edu,userNative))
 			{
 				showMessage("请完善员工信息！");
+				return;
+			}
+			if(user!=null)//修改信息
+			{
+				user.setName(userName);
+				user.setPwd(pwd);
+				user.setDepartment(department);
+				user.setSex(sex);
+				user.setEducation(edu);
+				user.setNativePlace(userNative);
+				boolean isSuccess=UserDao.updateUser(user);
+				if(isSuccess)
+				{
+					showMessage("员工信息修改添加！");
+					dispose();
+				}else
+				{
+					showMessage("员工信息修改失败！");
+				}
 				return;
 			}
 			User user=UserDao.queryUserByNumber(number);
