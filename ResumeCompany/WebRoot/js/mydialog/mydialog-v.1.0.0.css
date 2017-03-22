@@ -1,0 +1,68 @@
+#my_dialog{
+		border:1px solid #9d9d9d;
+		width:400px;
+		height:230px;
+		position:fixed;
+		top:-30%;
+		left:40%;
+		background:#fff;
+		z-index:1000;
+		display:none;
+	}
+	#dialog_title{
+		background:#4680d1;
+		height:35px;
+		line-height:35px;
+		vertical-align:middle;
+		padding-left:15px;
+		color:#fff;
+		font-size:14px;
+	}
+	#dialog_remove{
+		outline:none;
+		float:right;
+		width:15px;
+		height:15px;
+		margin-right:10px;
+		margin-top:7px;
+	}
+	#dialog_content{
+		height:100px;
+		padding:0px 20px; 
+		font-size:14px;
+	}
+	#updImg_div{
+		float:left;
+		width:120px;
+		height: 120px;
+		border:1px solid #9d9d9d;
+	}
+	.cgBtn{
+		background:#303030;
+		border:1px solid #9d9d9d;
+		border-radius:3px;
+		font-size: 14px;
+		margin-right: 8px;
+		width:110px;
+		height:35px;
+	}
+	#chgOK{
+		background:#ffb137;
+	}
+	#cancelBtn{
+		background:	#E0E0E0;
+	}
+	
+	#alert_img img{
+		width:58px;
+		height:58px;
+		position:relative;
+		top:21px;
+		margin-right:10px;
+	}
+	#alert_content_text,#alert_img{
+		float:left;
+	}
+	#alert_content_text{
+		vertical-align: middle;
+	}

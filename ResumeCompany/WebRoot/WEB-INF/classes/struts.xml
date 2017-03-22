@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="default" namespace="/" extends="struts-default,json-default">
+	<!-- 定义一个拦截器 -->
+		<interceptors>
+			<interceptor name="authority"
+				class="com.yubso.resumecompany.util.LoginInterceptor">
+			</interceptor>
+			<!-- 拦截器栈 -->
+			<interceptor-stack name="mydefault">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="authority" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="mydefault" />
+		<!-- 定义全局Result -->
+		<global-results>
+			<!-- 当返回login视图名时，转入/default_error.jsp页面 ,然后跳转到登陆界面 -->
+			<result name="login" type="redirect">/admin/default_error.jsp</result>
+			<result name="404page" type="redirect">/admin/404page.jsp</result>
+			<result name="logout">/admin/default_error.jsp</result>
+			<result name="json" type="json"></result>
+			<result name="loginAlogin" type="redirect">/login!login</result>
+			<result name="dealResult">/admin/dealResult.jsp</result>
+		</global-results>
+		<action name="login" class="com.yubso.resumecompany.action.LoginAction">
+ 			<result name="success0">/admin/guidepage.jsp</result>
+			<result name="success1">/admin/hr/guidepage.jsp</result>
+			<result name="failed">/admin/login_failed.jsp</result> 
+			<result name="login">/admin/default_error.jsp</result>
+		</action>
+		<!-- 企业注册 -->
+		<action name="register" class="com.yubso.resumecompany.action.RegisterAction">
+  			<result name="failed">/admin/register_failed.jsp</result>
+			<result name="success">/admin/register_success.jsp</result>
+		</action>
+		<action name="code" class="com.yubso.resumecompany.action.CodeAction">
+			<result name="code" type="stream"></result>
+		</action>
+		<action name="ajax" class="com.yubso.resumecompany.action.AjaxAction">
+		</action>
+		<action name="job" class="com.yubso.resumecompany.action.JobAction">
+			<result name="comApplys">/admin/comApplys.jsp</result> 
+			<result name="hrApplys">/admin/hr/hrApplys.jsp</result> 
+ 			<result name="hrJobs">/admin/hr/hrComJobs.jsp</result>  
+			<result name="jobManager">/admin/jobManage.jsp</result> 
+			<result name="outlineJobManager">/admin/outlineJobManage.jsp</result> 
+			<result name="lookApply">/admin/lookApply.jsp</result>
+			<result name="jobDetail">/admin/jobDetail.jsp</result>
+			<result name="editJob">/admin/editJob.jsp</result>
+			<result name="toAddPage">/admin/releaseJob.jsp</result>
+			<result name="toJobVipPay">/admin/jobVipPay.jsp</result>
+			<result name="toUploadLogo">/admin/uploadComLogo.jsp</result>
+		</action>
+		<action name="myInfo" class="com.yubso.resumecompany.action.MyInfoAction">
+			<result name="myInfo">/admin/myInfo.jsp</result>
+			<result name="queryToRechage">/admin/recharge.jsp</result>
+			<result name="queryToEdit">/admin/editMyInfo.jsp</result>
+			<result name="hrComs">/admin/hr/hrComs.jsp</result>
+ 			<result name="hrInfo">/admin/hr/hrInfo.jsp</result>
+ 			<result name="queryToHrEdit">/admin/hr/editHrInfo.jsp</result>
+ 			<result name="toAddPage">/admin/releaseJob.jsp</result>
+ 			<result name="toUpdateAuth">/admin/comToAuth.jsp</result>
+		</action>
+		<!-- 企业管理-->
+		<action name="company" class="com.yubso.resumecompany.action.CompanyAction">
+			<result name="saveBaseCom">/admin/hr/addComUpload.jsp</result>
+ 			<result name="hrCom">/admin/hr/manageComs.jsp</result>
+		</action>
+		<action name="resume" class="com.yubso.resumecompany.action.ResumeAction">
+			<result name="allResumes">/admin/searchAllResume.jsp</result>
+			<result name="boughtResumes">/admin/boughtResume.jsp</result>
+ 			<result name="invitedResumes">/admin/seachInvitedResume.jsp</result>
+ 			<result name="resumeDetail">/admin/seachResume.jsp</result>
+		</action>
+		<action name="pay" class="com.yubso.resumecompany.action.PayAction">
+			<result name="payRecords">/admin/paymentRecords.jsp</result>
+			<result name="expenseRecords">/admin/expenseRecords.jsp</result>
+		</action>
+		<action name="news" class="com.yubso.resumecompany.action.NewsAction">
+			<result name="allNews">/admin/searchAllNews.jsp</result>
+			<result name="newsDetail">/admin/newsDetail.jsp</result>
+			<result name="editNews">/admin/editNews.jsp</result>
+			<result name="toAddPage">/admin/addNews.jsp</result>
+		</action>
+		<!-- 活动-->
+		<action name="activities" class="com.yubso.resumecompany.action.ActivitiesAction">
+			<result name="showActivities">/admin/searchAllActivities.jsp</result>
+			<result name="activitiesDetail">/admin/activitiesDetail.jsp</result>
+			<result name="editActivities">/editActivities.jsp</result>
+			<result name="toAddPage">/addActivities.jsp</result>
+		</action>
+		<action name="push" class="com.yubso.resumecompany.action.PushAction">
+		</action>
+		<action name="invoice" class="com.yubso.resumecompany.action.InvoiceAction">
+			<result name="toAddPage">/admin/addInvoice.jsp</result>
+			<result name="allInvoices">/admin/invoiceRecords.jsp</result>
+		</action>
+	</package>
+</struts>    

@@ -1,0 +1,590 @@
+
+body {
+	background-color: #FFFFFF;
+	font-family: "宋体";
+	font-size: 12px;
+}
+
+input {
+	font-family: "宋体";
+	font-size: 12px;
+}
+
+textarea {
+	font-family: "宋体";
+	font-size: 12px;
+	width: 400px;
+	height: 100px;
+	resize: none;
+}
+
+.textdesciption {
+	font-family: "宋体";
+	font-size: 12px;
+	width: 230px;
+	height: 50px;
+	max-width: 230px;
+	max-height: 50px;
+	resize: none;
+}
+
+select {
+	font-family: "宋体";
+	font-size: 12px;
+}
+
+.releaseJob_need {
+	width: 10px;
+	color: #b20202;
+}
+
+.tipmsg {
+	padding: 0 10px;
+}
+
+.content {
+	color: #555;
+	line-height: 24px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	border-top-color: #ddd;
+	border-bottom-color: #ddd;
+	border-left-color: #ddd;
+	border-top-color: #ddd;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+}
+
+.release_btn {
+	background-color: 
+}
+
+.divPage {
+	height: 25px;
+	background-color: #e4ebf1;
+	vertical-align: middle;
+}
+
+.mar001 {
+	margin-top: 100px;
+}
+
+.mar002 {
+	margin-top: 30px;
+	margin-right: 20px;
+}
+
+.mar003 {
+	margin-top: 15px;
+	margin-right: 20px;
+}
+
+.mar004 {
+	margin-top: 5px;
+}
+
+.mar005 {
+	margin-top: 10px;
+}
+
+.mar006 {
+	margin-bottom: 10px;
+	margin-left: 20px;
+}
+
+.mar007 {
+	margin-left: 40px;
+}
+
+.mar008 {
+	margin-left: 25px;
+}
+
+.mar009 {
+	margin-top: 8px;
+}
+
+.bg01 {
+	background-repeat: no-repeat;
+}
+
+.bg02 {
+	background-repeat: repeat-y;
+	background-position: center;
+}
+
+.dataTitle {
+	background-color: #bbbbbb;
+}
+
+.bg04 {
+	background-color: #e7e7e7;
+}
+
+.text001 {
+	font-size: 14px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+.text002 {
+	font-size: 14px;
+	font-weight:bold;
+}
+
+.text003 {
+	font-size: 14px;
+	color: #62b8d1;
+	font-weight: bold;
+}
+.text003gai {
+	font-size: 18px;
+	color: #222222;
+	font-weight: bold;
+}
+
+.text004 {
+	font-size: 14px;
+	color: #FFFFFF;
+}
+.text004gai{
+	font-size: 16px;
+	color: #ff9f16;
+}
+
+.text005 {
+	font-size: 14px;
+	color: #000000;
+	font-weight: bold;
+}
+
+.text006 {
+	font-size: 16px;
+	color: #12586c;
+	font-weight: bold;
+}
+
+.text006g {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.text006gai {
+	font-size: 16px;
+	color: #ccc;
+	font-weight: bold;
+}
+
+.text007 {
+	font-size: 18px;
+	color: #ffffff;
+	font-weight: bold;
+}
+.text007gai {
+	font-size: 14px;
+	color: #555555;
+	white-space:nowrap;
+	
+}
+
+.text008 {
+	font-size: 13px;
+}
+
+.text009 {
+	font-size: 14px;
+	color: #e21919;
+	font-weight: bold;
+}
+
+.text010 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #116e86;
+}
+
+.text011 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #6e4242;
+}
+
+.text012 {
+	font-size: 30px;
+	font-weight: bold;
+	line-height: 40px;
+}
+
+.inp001 {
+	width: 165px;
+	height: 18px;
+	border: 1px solid #000000;
+	margin-left: 10px;
+}
+
+.inp002 {
+	width: 400px;
+	height: 150px;
+	border: 1px solid #000000;
+	margin-left: 10px;
+	margin-top: 8px;
+	margin-bottom: 15px;
+}
+
+.inp003 {
+	width: 80px;
+	height: 18px;
+	border: 1px solid #000000;
+	margin-left: 10px;
+}
+
+.inp004 {
+	width: 110px;
+	height: 18px;
+	color: #666666;
+}
+
+.inp005 {
+	width: 110px;
+	height: 18px;
+	color: #666666;
+	margin-left: 10px;
+}
+
+.inp006 {
+	width: 230px;
+	height: 30px;
+	margin-left: 4px;
+	line-height: 30px;
+	padding-left: 4px;
+	*padding-left: 4px;
+}
+
+.inp007 {
+	width: 235px;
+	height: 24px;
+	margin-left: 2px;
+	font-size: 13px;
+}
+
+.bor001 {
+	border-top:2px solid #4680d1;
+}
+
+.bor002 td {
+	border-bottom: 1px solid #4aa5bb;
+}
+
+.bor003 {
+	border-top: 1px solid #000000;
+}
+
+.bor004 {
+	border-top: 1px solid #000000;
+	border-bottom: 1px solid #000000;
+}
+
+a.tex001:link {
+	font-size: 14px;
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a.tex001:visited {
+	font-size: 14px;
+	color: #000000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a.tex001:hover {
+	font-size: 14px;
+	color: #B40117;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a.tex002:link {
+	font-size: 14px;
+	color: #ffffff;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a.tex002:visited {
+	font-size: 14px;
+	color: #ffffff;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a.tex002:hover {
+	font-size: 14px;
+	color: #B40117;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a.tex04:link {
+	color: #484848;
+	text-decoration: none;
+}
+
+a.tex04:visited {
+	color: #484848;
+	text-decoration: none;
+}
+
+a.tex04:active {
+	color: #484848;
+	text-decoration: none;
+}
+
+a.tex04:hover {
+	color: #484848;
+	text-decoration: none;
+}
+/* 发布界面的td */
+.gray {
+	padding: 10px;
+	width: 250px;
+	height: 100px
+}
+
+.lefttd {
+	background-color: #e6e6e6;
+	height: 40px;
+	line-height:40px;
+	text-align: center;
+	font-size: 14px;
+}
+
+.release_submit {
+	font-size: 14px;
+	margin-left: 170px;
+	width:  237px; 
+	height : 39px;
+	background-image: url(../images/change_common.png);
+	border: 0px;
+	color: #ffffff;
+}
+/* 自定义按钮 */
+.self_btn{
+	font-size: 14px;
+	margin-left: 170px;
+	width:  238px; 
+	height : 37px;
+	border: 0px;
+	color: #ffffff;
+	height: 39px;
+}
+.change_submit{
+	font-size: 14px;
+	margin-left: 170px;
+	width:  237px; 
+	height : 39px;
+	background-image: url(../images/change_common.png);
+	border: 0px;
+	color: #ffffff;
+	height: 39px;
+	margin-top: 20px;
+}
+
+.seachjob_td {
+	border-bottom: 1px solid #4aa5bb;
+}
+
+.coolscrollbar {
+	scrollbar-arrow-color: yellow;
+	scrollbar-base-color: lightsalmon;
+}
+
+.style1 {
+	font-size: 12px;
+	background: url(../images/index_02.gif);
+	border: 1px;
+	width: 75px;
+	height: 24px
+}
+
+.style2 {
+	font-size: 12px;
+	font-weight: bold;
+	background: url(../images/index_02.gif);
+	border: 1px;
+	width: 75px;
+	height: 24px
+}
+
+.input_submit {
+	font-size: 14px;
+	color: #FFFFFF;
+	margin-left: 0px;
+}
+
+.submitBtn {
+	background: url(../images/register3.png) no-repeat;
+	display: inline-block;
+	height: 40px;
+	width: 150px;
+	text-align: center;
+	border: 0px none;
+	cursor: pointer;
+	font: bold 22px/52px "微软雅黑";
+	color: rgb(255, 255, 255);
+}
+
+.loginBtn {
+	background: url(../images/login1.png) no-repeat;
+	display: inline-block;
+	height: 48px;
+	width: 146px;
+	text-align: center;
+	border: 0px none;
+	cursor: pointer;
+	font: bold 22px/52px "微软雅黑";
+	color: rgb(255, 255, 255);
+}
+
+.registInput {
+	width: 190px;
+	height: 22px;
+	border: solid 1px #cccccc;
+	border-radius:4px;
+	font-size: 12px;
+}
+
+.registTip {
+	width: 80px;
+	height: 22px;
+	vertical-align: middle;
+}
+
+.bottomJsp {
+	margin-bottom: 10px;
+}
+
+.keyword {
+	color: #c8c8c8
+}
+
+#keyword.keyword2 {
+	background-position: 0 50px;
+	color: #292929
+}
+.r8{
+	font-size: 12px;
+	color: #050505;
+	white-space:nowrap;
+}
+/*职位福利*/
+.welfare_ul li,.brightspot li {
+	float: left;
+	white-space: nowrap;
+	padding: 0px 15px;
+	margin-bottom: 10px;
+	line-height: 30px;
+	text-align: center;
+	height: 30px;
+	border: 1px solid #C8C8C8;
+	margin-right: 9px;
+	cursor: pointer;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-size: 14px;
+}
+
+.welfare_ul li.active,.brightspot li .active {
+	float: left;
+	white-space: nowrap;
+	border: 2px solid #F28748;
+	height: 26px;
+	padding: 0px 14px;
+	background: url(../images/sel_bg.png) no-repeat scroll right bottom
+		transparent;
+}
+
+.welfare_ul li.actived,.brightspot li.actived {
+	border: 2px solid #f28748;
+	height: 26px;
+	padding: 0 20px 0 6px;
+	background: #fff5ef
+}
+
+.key_div {
+	position: relative;
+	float: left;
+	display: inline;
+	vertical-align: middle;
+	z-index: 1;
+	height: 26px;
+	line-height: 26px;
+}
+
+.welfare_uls .cbdel,.brightspot .cbdel {
+	position: absolute;
+	top: 6px;
+	right: 4px;
+	display: block;
+	width: 13px;
+	height: 13px;
+	padding-left: 1px;
+	background: url(../images/radio_bg.png) 0px
+		-98px no-repeat;
+	cursor: pointer;
+}
+
+.brightspot {
+	margin-bottom: 10px
+}
+
+#txtOthBrig1 {
+	float: left;
+	width: 170px;
+	border: 1px solid #CDCDCD;
+	margin: 0px;
+	margin-left: 4px;
+	height: 26px;
+	line-height:26px;
+	outline: medium none;
+	font-size: 14px;
+}
+
+.addbrig {
+	height: 28px;
+	border-width: 1px 1px 1px medium;
+	border-style: solid solid solid none;
+	border-color: #DCDEE1 #DCDEE1 #DCDEE1 -moz-use-text-color;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	width: 69px;
+	text-align: center;
+	color: #585858;
+	background: none repeat scroll 0% 0% #FAFAFA;
+	font-weight: normal;
+	cursor: pointer;
+	margin-right: 5px;
+	outline: medium none;
+	display: inline;
+	outline: medium none;
+	font-size: 14px;
+}
+.welfare_uls li, .brightspot li {
+    position: relative;
+}
+.clear:after {
+	display: block;
+	content: '';
+	clear: both;
+}
+
+.clear {
+	zoom: 1;
+}

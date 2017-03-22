@@ -1,0 +1,61 @@
+.tipdiv{
+	position: absolute;
+	z-index: 22;
+	height: 720px;
+	width: 800px;
+	vertical-align: middle;
+	font-size: 16px;
+	font-family: 宋体;
+	letter-spacing: 2px;
+	top:-69px;
+}
+.sexDiv{
+	float: left;
+	font-size: 15px;
+	margin: 15px 15px 10px;
+}
+.font_input input{
+	 border-style: none;
+	 border-bottom: 1px solid #000;
+	 width: 170px;
+	 height: 28px;	
+	 font-size: 16px;
+	 padding-left: 5px;
+}
+.sendName{
+	font-size: 17px;
+	color: #0f6aff;
+}
+#jobName{
+width: 120px;
+}
+.informs_buttons {
+	text-align: center;
+}
+.liButton{
+	text-align: center;
+    margin-top: 25px;
+}
+.liButton input{
+	width:100px;
+	height: 30px;
+	margin-left: 25px;
+	margin-top: 15px;
+}
+#sendName ,#companyName{
+	color: #0f6aff;
+}
+#inbg{
+	position: relative;
+}
+#talentstable {
+	width: 520px;
+	margin-top: 190px;
+	position: relative;
+	left:175px;
+}
+ul,ol {
+	list-style: none outside none;
+}
+
+

@@ -1,0 +1,55 @@
+	input,textarea {
+		border:1px solid #ccc;
+	}
+	.zjp_myselect{
+		width:150px;
+		float:left;
+		cursor:pointer;
+	}
+	.zjp_myselect_currentSelect{
+		border:1px solid #ccc;
+		height:30px;
+		line-height:30px;
+		vertical-align:middle;
+		font-size: 15px;
+		padding-left: 10px;
+	}
+	.zjp_myselect_options{
+		border:1px solid #ccc;
+		display:none;
+		position:absolute;
+		z-index: 98;
+		background:#fff;
+		width:148px;
+		outline: none;
+		padding-right:-2px;
+	}
+	.zjp_myselect_option_item{
+		background: #fff;
+		height:30px;
+		font-size: 15px;
+		line-height:30px;
+		vertical-align:middle; 
+		padding-left:10px; 
+		padding-right:-10px; 
+	}
+	.zjp_myselect_option_splitline{
+		height:1px;
+		background:#8e8e8e;
+	}
+	.zjp_myselect_currentSelect_show{
+		display:inline-block;
+		float:left;
+	}
+	.zjp_myselect_currentSelect_icon{
+		background:url("images/bg-selectt.png") no-repeat;
+		height:30px;
+		width:25px; 
+		margin-top:10px;
+		display:inline-block;
+		float:right;
+		
+	}
+	select{
+		float:left;
+	}

@@ -1,0 +1,116 @@
+#select_job_dialog {
+	border: 1px solid #9d9d9d;
+	width: 680px;
+	height: 480px;
+	padding:0px 25px;
+	position: absolute;
+	z-index: 1000;
+	background: #fff;
+	left: 50px;
+	top: 45px;
+	display: none;
+}
+
+#job_dialog_title {
+	line-height: 45px;
+	font-size: 20px;
+	color: #4680d1;
+	position: relative;
+	left: -10px;
+}
+
+.job_left_td {
+	width: 120px;
+	font-size: 16px;
+}
+
+.secondRow {
+	clear: both;
+}
+
+.show_job_content {
+	position: absolute;
+	width: 300px;
+	border: 1px solid green;
+	left: -100px;
+	top: 30px;
+	display: none;
+	background: #fff;
+	z-index: 1000;
+	padding: 20px;
+}
+
+.show_second_title {
+	float: left;
+}
+
+.second_li {
+	width: 110px;
+	line-height: 30px;
+	float: left;
+	font-size: 14px;
+	cursor: pointer;
+}
+
+.contentRow {
+	background: #ffffff;
+	clear: both;
+}
+
+.content_li {
+	min-width: 145px;
+	line-height: 35px;
+	float: left;
+	font-size: 13px;
+}
+
+.show_second_title {
+	cursor: pointer;
+	padding: 0px 5px;
+}
+
+.content_item {
+	padding: 3px 5px;
+}
+
+.content_item:hover,.show_second_title:hover {
+	background: #d5d5d5;
+}
+
+s {
+	position: absolute;
+	display: none;
+	top: 10px;
+	*top: 10px;
+	left: 20px;
+	*left: -45px;
+	height: 0;
+	width: 0;
+	font-size: 0;
+	line-height: 0;
+	border-color: transparent transparent green transparent;
+	border-style: dashed dashed solid dashed;
+	border-width: 10px;
+	z-index: 1100;
+}
+
+i {
+	position: absolute;
+	top: -9px;
+	*top: -9px;
+	left: -10px;
+	height: 0;
+	width: 0;
+	font-size: 0;
+	line-height: 0;
+	border-color: transparent transparent #fff transparent;
+	border-style: dashed dashed solid dashed;
+	border-width: 10px;
+}
+
+.grayline {
+	background: none repeat scroll 0% 0% #f0f0f0;;
+}
+#dialog_show_table{
+	border-collapse: collapse;
+}

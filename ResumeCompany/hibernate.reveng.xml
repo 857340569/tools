@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="company" schema="dbo" catalog="YubsoCloudResume"
+		class="com.yubso.resumecompany.entity.Company">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="job" schema="dbo" catalog="YubsoCloudResume"
+		class="com.yubso.resumecompany.entity.Job">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="job_application" schema="dbo"
+		catalog="YubsoCloudResume"
+		class="com.yubso.resumecompany.entity.JobApplication">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="resume" schema="dbo" catalog="YubsoCloudResume"
+		class="com.yubso.resumecompany.entity.Resume">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="bought_resume" schema="dbo" catalog="YubsoCloudResume"
+		class="com.yubso.resumecompany.entity.BoughtResume">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="payment_order" schema="dbo" catalog="YubsoCloudResume"
+		class="com.yubso.resumecompany.entity.PaymentOrder">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="payment_record" schema="dbo" catalog="YubsoCloudResume"
+		class="com.yubso.resumecompany.entity.PaymentRecord">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="human_resource" schema="dbo" catalog="YubsoCloudResume"
+		class="com.yubso.resumecompany.entity.HumanResource">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="u_user" schema="dbo" catalog="YubsoCloudResume"
+		class="com.yubso.resumecompany.entity.User">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="expense_record" schema="dbo" catalog="YubsoCloudResume"
+		class="com.yubso.resumecompany.entity.ExpenseRecord">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="news" schema="dbo" catalog="YubsoCloudResume"
+		class="com.yubso.resumecompany.entity.News">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="activities" schema="dbo" catalog="YubsoCloudResume"
+		class="com.yubso.resumecompany.entity.Activities">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="push_message" schema="dbo" catalog="YubsoCloudResume"
+		class="com.yubso.resumecompany.entity.PushMessage">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="work_experience" schema="dbo"
+		catalog="YubsoCloudResume"
+		class="com.yubso.resumecompany.entity.WorkExperience">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+	<table name="invoice" schema="dbo" catalog="YubsoCloudResume"
+		class="com.yubso.resumecompany.entity.Invoice">
+		<primary-key>
+			<generator class="native"></generator>
+		</primary-key>
+	</table>
+<table name="ComHrVip" schema="dbo" catalog="YubsoCloudResume"
+	class="com.yubso.resumecompany.entity.ComHrVip">
+	<primary-key>
+		<generator class="native"></generator>
+	</primary-key>
+</table>
+</hibernate-reverse-engineering>
