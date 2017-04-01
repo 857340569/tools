@@ -128,8 +128,8 @@ public class ExcelUtils {
 					setCellVal(sheet, rowIndex, colIndex++, txv);
 
 					Integer daiXin = temp.get("◆");
-					float dxv = daiXin == null ? 0 : daiXin * 4;
-					System.out.println("带薪:" + dxv + "小时\t");
+					float dxv = daiXin == null ? 0 :(float) daiXin / 2;
+					System.out.println("带薪:" + dxv + "天\t");
 					setCellVal(sheet, rowIndex, colIndex++, dxv);
 				}
 			}
