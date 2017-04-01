@@ -1,11 +1,13 @@
 package cmq.excel;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellType;
@@ -50,6 +52,7 @@ public class Test {
 						continue;
 					for (int col = 0; col < cols; col++) {
 						Cell cell = r.getCell(col);
+						if(cell==null) continue;
 						if (row % 3 == 0 && col == 1) {
 							currentName=cell.getStringCellValue();
 							if(StringUtils.isEmpty(currentName)||currentName.contains("请签字确认"))
@@ -80,39 +83,89 @@ public class Test {
 				}
 				
 				//空心方块是调休 三角形是出差 4是加班时间
+				int count=0;
+				int rowIndex=0;
+				int colIndex=0;
 				for (String name:names) {
+					count++;
+					rowIndex=count*3;
+					colIndex=35;
 					Map<String,Integer> temp=sheetCounts.get(name);
 					if(temp==null) continue;
 					System.out.print(name+":\t");
 					Integer chuQin=temp.get("/");
-					System.out.print("实出勤:"+(chuQin==null?0:(float)temp.get("/")/2)+"天\t");
+					float cqv=chuQin==null?0:(float)temp.get("/")/2;
+					System.out.print("实出勤:"+cqv+"天\t");
+					setCellVal(sheet,rowIndex,colIndex++,cqv);
+					
 					Integer chuChai=temp.get("△");
-					System.out.print("实出勤:"+(float)temp.get("/")/2+"天\t出差:"+(chuChai==null?0:(float)chuChai/2)+"天\t");
+					float ccv=chuChai==null?0:(float)chuChai/2;
+					System.out.print("出差:"+ccv+"天\t");
+					setCellVal(sheet,rowIndex,colIndex++,ccv);
+					
 					Integer jiaBan=temp.get("4");
-					System.out.print("周六/周日:"+(jiaBan==null?0:jiaBan*4)+"小时\t");
+					float jbv=jiaBan==null?0:jiaBan*4;
+					System.out.print("周六/日:"+jbv+"小时\t");
+					setCellVal(sheet,rowIndex,colIndex++,jbv);
+					
+					//如果无节假日 ，则需要注释掉
+					Integer jieJiaRi=temp.get("节假日符号");
+					float jjrv=jieJiaRi==null?0:jieJiaRi*4;
+					System.out.print("节假日:"+jjrv+"小时\t");
+					setCellVal(sheet,rowIndex,colIndex++,jjrv);
 					
 					Integer shiJia=temp.get("●");
-					System.out.print("事假:"+(shiJia==null?0:shiJia*4)+"小时\t");
+					float sjv=shiJia==null?0:shiJia*4;
+					System.out.print("事假:"+sjv+"小时\t");
+					setCellVal(sheet,rowIndex,colIndex++,sjv);
 					
 					Integer bingJia=temp.get("○");
-					System.out.print("病假:"+(bingJia==null?0:bingJia*4)+"小时\t");
+					float bjv=bingJia==null?0:bingJia*4;
+					System.out.print("病假:"+bjv+"小时\t");
+					setCellVal(sheet,rowIndex,colIndex++,bjv);
 					
 					Integer kuangGong=temp.get("＃");
-					System.out.print("旷工:"+(kuangGong==null?0:kuangGong*4)+"小时\t");
+					float kgv=kuangGong==null?0:kuangGong*4;
+					System.out.print("旷工:"+kgv+"小时\t");
+					setCellVal(sheet,rowIndex,colIndex++,kgv);
+					
 					
 					Integer tiaoXiu=temp.get("□");
-					System.out.print("调休:"+(tiaoXiu==null?0:tiaoXiu*4)+"小时\t");
+					float txv=tiaoXiu==null?0:tiaoXiu*4;
+					System.out.print("调休:"+txv+"小时\t");
+					setCellVal(sheet,rowIndex,colIndex++,txv);
 					
 					Integer daiXin=temp.get("◆");
-					System.out.println("带薪:"+(daiXin==null?0:(float)daiXin/2)+"小时\t");
-//					while (tempKeys.hasNext()) {
-//						String keyTemp=tempKeys.next();
-//						System.out.println(keyTemp+"："+temp.get(keyTemp));
-//					}
+					float dxv=daiXin==null?0:daiXin*4;
+					System.out.println("带薪:"+dxv+"小时\t");
+					setCellVal(sheet,rowIndex,colIndex++,dxv);
 				}
 			}
+//			FileOutputStream out =  new FileOutputStream(new File(path));
+			FileOutputStream out =  new FileOutputStream(new File(path.substring(0,path.length()-4)+"2.xls"));
+			workbook.write(out);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
+	}
+	public static void setCellVal(Sheet sheet,int rowIndex,int colIndex,Object val)
+	{
+
+		Row row=sheet.getRow(rowIndex);
+		if(row!=null)
+		{
+			Cell cell=row.getCell(colIndex);
+			if(cell!=null&&val!=null)
+			{
+				String valStr=val.toString();
+				if(valStr.endsWith(".0"))
+				{
+					valStr=valStr.substring(0, valStr.length()-2);
+				}
+				cell.setCellValue(valStr);
+			}
+		}
+		
 	}
 }
