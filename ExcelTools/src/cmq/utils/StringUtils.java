@@ -1,5 +1,7 @@
 package cmq.utils;
 
+import java.util.regex.Pattern;
+
 public class StringUtils {
 	public static boolean isEmpty(String str)
 	{
@@ -41,5 +43,29 @@ public class StringUtils {
 			e.printStackTrace();
 		}
 		return str;
+	}
+	/**
+	 * 功能：判断字符串是否为数字
+	 * 
+	 * @param str
+	 * @return
+	 */
+	public static boolean isNumeric(String str) {
+		return matches("\\-?[0-9]+", str);
+	}
+	/**
+	 * 是否比配正则
+	 * 
+	 * @param patternStr 规则
+	 * @param str 
+	 * @return
+	 */
+	public static boolean matches(String patternStr, String str) {
+		if (isEmpty(patternStr, str))
+			return false;
+//		Pattern pattern = Pattern.compile(patternStr);
+//		Matcher matcher = pattern.matcher(str);
+//		return matcher.matches(); // 当条件满足时，将返回true，否则返回false
+		return Pattern.matches(patternStr, str);
 	}
 }

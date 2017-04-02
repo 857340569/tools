@@ -37,7 +37,7 @@ public class ExcelUtils {
 				Map<String, Map<String, Integer>> sheetCounts = new HashMap<>();
 				List<String> names = new ArrayList<>();
 				String currentName = "";
-
+				int maxDay=0;
 				// 读取数据
 				for (int row = 0; row < rows; row++) {
 					Row r = sheet.getRow(row);
@@ -70,6 +70,23 @@ public class ExcelUtils {
 								currentUser.put(content, currentUser.get(content) + 1);
 							}
 						}
+						//获取当月天数
+						if(row==2)
+						{
+							if(cellType==CellType.NUMERIC)
+							{
+								maxDay=(int) cell.getNumericCellValue();
+							}else if(cellType == CellType.STRING)//有可能也为数字
+							{
+								String val=cell.getStringCellValue();
+								if(StringUtils.isNumeric(val))
+								{
+									maxDay=Integer.parseInt(val);
+								}
+							}
+							
+							
+						}
 
 					}
 				}
@@ -81,7 +98,7 @@ public class ExcelUtils {
 				for (String name : names) {
 					count++;
 					rowIndex = count * 3;
-					colIndex = 35;
+					colIndex = maxDay+4;
 					Map<String, Integer> temp = sheetCounts.get(name);
 					if (temp == null)
 						continue;
@@ -100,13 +117,14 @@ public class ExcelUtils {
 					float jbv = jiaBan == null ? 0 : jiaBan * 4;
 					System.out.print("周六/日:" + jbv + "小时\t");
 					setCellVal(sheet, rowIndex, colIndex++, jbv);
-
-					// 如果无节假日 ，则需要注释掉
-					Integer jieJiaRi = temp.get("节假日符号");
-					float jjrv = jieJiaRi == null ? 0 : jieJiaRi * 4;
-					System.out.print("节假日:" + jjrv + "小时\t");
-					setCellVal(sheet, rowIndex, colIndex++, jjrv);
-
+					//i工作表索引 0表示的是正式员工，实习生没有节假日这一项
+					if(i==0){
+						Integer jieJiaRi = temp.get("节假日符号<请替换>");
+						float jjrv = jieJiaRi == null ? 0 : jieJiaRi * 4;
+						System.out.print("节假日:" + jjrv + "小时\t");
+						setCellVal(sheet, rowIndex, colIndex++, jjrv);
+					}
+					
 					Integer shiJia = temp.get("●");
 					float sjv = shiJia == null ? 0 : shiJia * 4;
 					System.out.print("事假:" + sjv + "小时\t");

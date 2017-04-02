@@ -10,6 +10,7 @@ public class Main {
 		Scanner scanner=new Scanner(System.in);
 		while(true)
 		{
+			//2017年3月份研究院考勤表  - 工研中心.xls
 			String path=scanner.nextLine();
 			if(!path.endsWith(".xls"))
 			{
@@ -21,6 +22,8 @@ public class Main {
 				path="./"+path;
 			}
 			ExcelUtils.readExcel(path);
+			System.out.println("已生成最新的"+path.substring(2, path.length() - 4) + "2.xls文件");
+			break;
 		}
 	}
 
