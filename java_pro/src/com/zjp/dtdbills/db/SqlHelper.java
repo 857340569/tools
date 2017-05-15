@@ -38,7 +38,7 @@ public class SqlHelper {
 				}
 				if(isPrimaryKey)
 				{
-					sql+=" primary key autoincrement";
+					sql+=" primary key auto_increment";
 				}
 				sql+=",";
 			}
